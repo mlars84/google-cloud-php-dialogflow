@@ -69,6 +69,9 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
      */
     private $sentiment_analysis_request_config = null;
+
+    private $knowledge_base_names = null;
+
     /**
      * This field can be used to pass HTTP headers for a webhook
      * call. These headers will be sent to webhook along with the headers that
@@ -128,7 +131,8 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      *           etc.
      * }
      */
-    public function __construct($data = NULL) {
+    public function __construct($data = NULL)
+    {
         \GPBMetadata\Google\Cloud\Dialogflow\V2\Session::initOnce();
         parent::__construct($data);
     }
@@ -353,6 +357,21 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
         unset($this->sentiment_analysis_request_config);
     }
 
+    public function getKnowledgeBaseNames()
+    {
+        return $this->knowledge_base_names;
+    }
+
+    public function hasKnowledgeBaseNames()
+    {
+        return isset($this->knowledge_base_names);
+    }
+
+    public function clearKnowledgeBaseNames()
+    {
+        unset($this->knowledge_base_names);
+    }
+
     /**
      * Configures the type of sentiment analysis to perform. If not
      * provided, sentiment analysis is not performed.
@@ -365,6 +384,13 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2\SentimentAnalysisRequestConfig::class);
         $this->sentiment_analysis_request_config = $var;
+
+        return $this;
+    }
+
+    public function setKnowledgeBaseNames($var)
+    {
+        $this->knowledge_base_names = $var;
 
         return $this;
     }
@@ -410,6 +436,4 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
-
 }
-
